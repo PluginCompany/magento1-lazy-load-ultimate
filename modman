@@ -1,0 +1,6 @@
+app/code/local/Plugincompany/Lazyload app/code/local/Plugincompany/Lazyload
+app/design/frontend/base/default/layout/plugincompany/lazyload.xml app/design/frontend/base/default/layout/plugincompany/lazyload.xml
+app/design/frontend/base/default/template/plugincompany/lazyload app/design/frontend/base/default/template/plugincompany/lazyload
+app/etc/modules/Plugincompany_Lazyload.xml app/etc/modules/Plugincompany_Lazyload.xml
+js/plugincompany/lazyload js/plugincompany/lazyload
+skin/frontend/base/default/css/plugincompany/lazyload.css skin/frontend/base/default/css/plugincompany/lazyload.css

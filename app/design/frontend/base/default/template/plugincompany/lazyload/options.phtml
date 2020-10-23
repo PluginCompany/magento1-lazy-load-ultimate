@@ -1,0 +1,60 @@
+<?php if(Mage::getStoreConfigFlag('plugincompany_lazyload/general/enable')) { ?>
+
+<?php
+$blur = Mage::getStoreConfig('plugincompany_lazyload/general/blur');
+$transition = Mage::getStoreConfig('plugincompany_lazyload/general/transition');
+$placeholderType = Mage::getStoreConfig('plugincompany_lazyload/general/placeholder_type');
+$renderingMethod = Mage::getStoreConfig('plugincompany_lazyload/general/rendering_method');
+$events = Mage::getStoreConfig('plugincompany_lazyload/general/lookup_events');
+$events = implode(' ', array_filter(array_map('trim', explode(PHP_EOL,$events))));
+?>
+<script type="text/javascript">
+    var pcLazyLoad = {};
+    pcLazyLoad.distance = <?php echo Mage::getStoreConfig('plugincompany_lazyload/general/trigger_distance'); ?>;
+    jQuery(document).ready(function() {
+        <?php if(!empty($events)){ ?>
+            jQuery(document).on('<?php echo $events; ?>', function() {
+                setTimeout(function(){
+                    updateLazyLoad();
+                },10);
+            });
+        <?php } ?>
+        <?php if(Mage::getStoreConfigFlag('plugincompany_lazyload/general/gallery_click_event')) { ?>
+            jQuery('.product-img-box').click(function(){
+                updateLazyLoad();
+            });
+        <?php } ?>
+        jQuery('#nav a, #header-nav a, .header-nav a, .nav a, .menu a, .level0 a').on('mouseenter click', function() {
+            setTimeout(function(){
+                updateLazyLoad();
+            },20);
+            setTimeout(function(){
+                updateLazyLoad();
+            },100);
+        });
+    })
+</script>
+
+<style type="text/css">
+    img.lazyload{
+    <?php if($placeholderType == 'blurred' && $transition){ ?>
+        transform: translate3d(0,0,0);
+        transform: translateZ(0);
+        transition: <?php echo $transition;?>s filter linear;
+        -o-transition: <?php echo $transition;?>s -o-filter linear;
+    <?php } ?>
+    <?php if($placeholderType == 'blurred'){ ?>
+        -webkit-filter: blur(<?php echo $blur; ?>px);
+        filter: blur(<?php echo $blur; ?>px);
+    <?php } ?>
+    <?php if($placeholderType == 'lowres' && $renderingMethod == 'pixelated'){ ?>
+        image-rendering: -moz-crisp-edges;
+        image-rendering:   -o-crisp-edges;
+        image-rendering: crisp-edges;
+        image-rendering: pixelated;
+        -ms-interpolation-mode: nearest-neighbor;
+    <?php } ?>
+    }
+</style>
+
+<?php } ?>

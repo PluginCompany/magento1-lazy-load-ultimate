@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <action method="addJs" ifconfig="plugincompany_lazyload/general/enable">
+                <script>plugincompany/lazyload/lazyload-lib.js</script>
+                <params><![CDATA[data-group="last"]]></params>
+            </action>
+            <action method="addJs" ifconfig="plugincompany_lazyload/general/enable">
+                <script>plugincompany/lazyload/lazyload.js</script>
+                <params><![CDATA[data-group="last"]]></params>
+            </action>
+            <action method="addCss" ifconfig="plugincompany_lazyload/general/enable">
+                <stylesheet>css/plugincompany/lazyload.css</stylesheet>
+            </action>
+        </reference>
+        <reference name="after_body_start">
+            <block type="core/template" template="plugincompany/lazyload/options.phtml" />
+        </reference>
+    </default>
+</layout>

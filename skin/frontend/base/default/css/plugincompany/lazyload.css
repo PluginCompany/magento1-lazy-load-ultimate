@@ -1,0 +1,19 @@
+img.pc_lazyload.lazyblur,
+img.pc_lazyload.lowres
+{
+    overflow:hidden;
+    max-width:100%;
+    position:relative;
+}
+
+img.lazyloaded.lazyblur
+{
+    -webkit-filter: blur(0px)!important;
+    filter: blur(0px)!important;
+}
+
+img.lazyloaded.lazyblur,
+img.lazyloaded.lowres
+{
+    image-rendering: initial!important;
+}

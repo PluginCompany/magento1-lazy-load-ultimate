@@ -1,0 +1,263 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <plugincompany translate="label" module="plugincompany_lazyload">
+            <label>Plugin Company</label>
+            <sort_order>20000</sort_order>
+        </plugincompany>
+    </tabs>
+    <sections>
+        <plugincompany_lazyload translate="label" module="plugincompany_lazyload">
+            <label>Lazy Load Ultimate</label>
+            <tab>plugincompany</tab>
+            <sort_order>121</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label">
+                    <label>Lazy Load Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>0</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <expanded>1</expanded>
+                    <fields>
+                        <enable translate="label">
+                            <label>Enable Extension</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Enable lazy image loading in the front-end store.</comment>
+                        </enable>
+                        <enable_category_pages>
+                            <label>Use on Category Pages</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable_category_pages>
+                        <enable_product_pages>
+                            <label>Use on Product Pages</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable_product_pages>
+                        <enable_cms_pages>
+                            <label>Use on CMS Pages</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable_cms_pages>
+                        <enable_checkout_pages>
+                            <label>Use on Checkout Pages</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable_checkout_pages>
+                        <layout_handles>
+                            <label>Enabled Layout Handles</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>plugincompany_lazyload/source_layouthandles</source_model>
+                            <validate>required-entry</validate>
+                            <comment>Layout handles in which images are lazy loaded.</comment>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </layout_handles>
+                        <additional_layout_handles>
+                            <label>Additional Enabled Layout Handles</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>plugincompany_lazyload/source_additionalLayouthandles</source_model>
+                            <comment>Additional layout handles which should have lazy loading enabled. This section is theme and page specific.</comment>
+                            <sort_order>65</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </additional_layout_handles>
+                        <excluded_urls>
+                            <label>Excluded URLs / Patterns</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>70</sort_order>
+                            <comment>One URL per line (regex)</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>URLs excluded from lazy loading (one entry per line).</comment>
+                        </excluded_urls>
+                        <excluded_css_classes>
+                            <label>Excluded CSS Classes</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>80</sort_order>
+                            <comment>One CSS class per line</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Image CSS classes excluded from lazy loading (one class per line).</comment>
+                        </excluded_css_classes>
+                        <excluded_text>
+                            <label>Excluded Text</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>90</sort_order>
+                            <comment>One string per line</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Image tags containing any of the added strings will be excluded from lazy loading (one string per line).</comment>
+                        </excluded_text>
+                        <placeholder_type>
+                            <label>Placeholder Type</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>plugincompany_lazyload/source_placeholderTypes</source_model>
+                            <validate>required-entry</validate>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Show a blurred, low resolution or transparent placeholder image.</comment>
+                        </placeholder_type>
+                        <enable_quick_dimensions_lookup translate="label">
+                            <label>Quick Placeholder Dimensions Lookup</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>111</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>If enabled image URL will be used to retrieve placeholder dimensions. Disable this option if some placeholder images don't have the correct size.</comment>
+                        </enable_quick_dimensions_lookup>
+                        <allow_remote_images translate="label">
+                            <label>Lazy Load Remote Images</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>112</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Allow lazy loading of remote image URLs. Only available for transparent placeholder type.</comment>
+                        </allow_remote_images>
+                        <placeholder_width>
+                            <label>Placeholder Quality</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>required-entry validate-number validate-not-negative-number</validate>
+                            <comment>Width in pixels of blurred and low resolution placeholder images. Greater width means better image quality but also larger size.</comment>
+                            <sort_order>116</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <placeholder_type separator=",">blurred,lowres</placeholder_type>
+                            </depends>
+                        </placeholder_width>
+                        <blur>
+                            <label>Placeholder Blur Intensity</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>required-entry validate-number validate-not-negative-number</validate>
+                            <comment>The intensity of the blur effect applied to placeholders. Setting this value to 2 seems best for performance.</comment>
+                            <sort_order>117</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <placeholder_type>blurred</placeholder_type>
+                            </depends>
+                        </blur>
+                        <transition>
+                            <label>Blur Transition Duration</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>required-entry</validate>
+                            <comment>Transition duration in seconds from blurred placeholder image to focused full-size image. Set to 0 to disable completely.</comment>
+                            <sort_order>118</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <placeholder_type>blurred</placeholder_type>
+                            </depends>
+                        </transition>
+                        <rendering_method>
+                            <label>Placeholder Rendering Method</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>plugincompany_lazyload/source_placeholderRenderingMethod</source_model>
+                            <validate>required-entry</validate>
+                            <sort_order>119</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <placeholder_type>lowres</placeholder_type>
+                            </depends>
+                        </rendering_method>
+                        <trigger_distance>
+                            <label>Viewport Trigger Distance</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>required-entry validate-number validate-not-negative-number</validate>
+                            <comment>Distance in pixels from the viewport before the full-size image should start loading.</comment>
+                            <sort_order>120</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </trigger_distance>
+                        <lookup_events>
+                            <label>Lookup Javascript Events</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>130</sort_order>
+                            <comment>One event per line</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Custom events which should trigger the lazy load extension to check which images are visible in the viewport. Useful for sliders.</comment>
+                        </lookup_events>
+                        <gallery_click_event translate="label">
+                            <label>Lookup on Image Gallery Click</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>140</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Disable this option if you're experiencing issues with the image gallery thumbnails on the product page.</comment>
+                        </gallery_click_event>
+                    </fields>
+                </general>
+                <iframe translate="label">
+                    <label>Iframe Lazy Loading Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <expanded>1</expanded>
+                    <fields>
+                        <video translate="label">
+                            <label>Lazy Load Video Iframes</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Enable for Vimeo and Youtube embed iframes</comment>
+                        </video>
+                    </fields>
+                </iframe>
+            </groups>
+        </plugincompany_lazyload>
+    </sections>
+</config>
